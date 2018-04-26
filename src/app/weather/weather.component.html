@@ -1,0 +1,30 @@
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div *ngIf="isValid">
+<ul>
+  <li *ngFor="let weather of myresonse.list">
+    <div>
+
+      <h5>Temperature</h5><span>{{weather.main.temp}} <sup>o</sup>F (min {{weather.main.temp_min}}<sup>o</sup>F ~ max {{weather.main.temp_max}}<sup>o</sup>F)</span>
+      <h5>Pressure</h5><span>{{weather.main.pressure}} pascal</span>
+      <h5>Sea Level</h5><span>{{weather.main.sea_level}} mamsl</span>
+      <h5>Humidity</h5><span>{{weather.main.humidity}} g/m<sup>3</sup></span>
+      <h5>Wind</h5><span>{{weather.wind.speed}} m/s</span>
+      <h5>Clouds</h5><span>{{weather.main.sea_level}} msl</span>
+      <br/>
+      <hr/>
+      <h5>It will be {{weather.weather[0].description}} today!</h5>
+      <br/>
+      <hr/>
+    </div>
+  </li>
+</ul>
+</div>
+
+<div *ngIf="!isValid">
+  <br/>
+  <div class="error">&nbsp;&nbsp;&nbsp;Weather service is unavailable due to bad weather ;) cant help it :P</div>
+</div>
